@@ -4,5 +4,5 @@ set -euo pipefail
 
 if [[ -f "$BUILDKITE_PLUGIN_ANNOTATE_PATH" ]]; then
     echo "--- Uploading $BUILDKITE_PLUGIN_ANNOTATE_PATH as $BUILDKITE_PLUGIN_ANNOTATE_STYLE"
-    ./buildkite-agent annotate --style="$BUILDKITE_PLUGIN_ANNOTATE_STYLE" --context="$BUILDKITE_LABEL"
+    cat "$BUILDKITE_PLUGIN_ANNOTATE_PATH" | buildkite-agent annotate --style="$BUILDKITE_PLUGIN_ANNOTATE_STYLE" --context="$BUILDKITE_LABEL"
 fi
