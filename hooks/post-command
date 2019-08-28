@@ -5,4 +5,6 @@ set -euo pipefail
 if [[ -f "$BUILDKITE_PLUGIN_ANNOTATE_PATH" ]]; then
     echo "--- Uploading $BUILDKITE_PLUGIN_ANNOTATE_PATH as $BUILDKITE_PLUGIN_ANNOTATE_STYLE"
     cat "$BUILDKITE_PLUGIN_ANNOTATE_PATH" | buildkite-agent annotate --style="$BUILDKITE_PLUGIN_ANNOTATE_STYLE" --context="$BUILDKITE_LABEL"
+else
+    echo "--- Annotation at $BUILDKITE_PLUGIN_ANNOTATE_PATH was not found, skipping"
 fi
