@@ -1,0 +1,14 @@
+name: Annotate
+description: Uploads annotations
+author: https://github.com/matrix-org
+configuration:
+  properties:
+    path:
+      type: string
+    style:
+      type: string
+      enum:
+        - success
+        - info
+        - warning
+        - error
